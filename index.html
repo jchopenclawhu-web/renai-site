@@ -12,20 +12,21 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∞</text></svg>">
 <style>
   :root{
-    --gold:#E8A317;
-    --gold-soft:#FDF4E0;
-    --blue:#1E4E8C;
-    --blue-deep:#14335C;
-    --ink:#1A1D21;
-    --muted:#5C6672;
-    --line:#E6E9ED;
-    --bg:#FFFFFF;
-    --bg-alt:#FAFAF7;
+    --yellow:#FFD84D;
+    --yellow-deep:#F2B705;
+    --yellow-soft:#FFF9E6;
+    --yellow-line:#F5E3A8;
+    --cream:#FFFDF7;
+    --blue:#1B4A8A;
+    --blue-deep:#12325E;
+    --ink:#2B2418;
+    --muted:#6B6250;
+    --line:#EDE6D6;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    margin:0; background:var(--bg); color:var(--ink);
+    margin:0; background:var(--cream); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
     line-height:1.8; -webkit-font-smoothing:antialiased;
   }
@@ -33,112 +34,118 @@
   a{color:inherit;text-decoration:none}
 
   header{
-    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
-    backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;background:var(--yellow);
+    border-bottom:3px solid var(--yellow-deep);
   }
-  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:.01em}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:17px;color:var(--blue-deep)}
   .infinity{
-    width:34px;height:34px;border-radius:9px;flex:0 0 auto;
-    background:linear-gradient(135deg,#2E6BC4,#14335C);
+    width:36px;height:36px;border-radius:10px;flex:0 0 auto;
+    background:linear-gradient(135deg,#2E6BC4,#12325E);
     display:flex;align-items:center;justify-content:center;
-    color:#fff;font-size:20px;line-height:1;font-weight:400;
+    color:#fff;font-size:21px;line-height:1;font-weight:400;
   }
-  .nav-links{display:flex;gap:26px;font-size:15px;color:var(--muted)}
-  .nav-links a:hover{color:var(--ink)}
+  .nav-links{display:flex;gap:26px;font-size:15px;font-weight:600;color:var(--blue-deep)}
+  .nav-links a{opacity:.78}
+  .nav-links a:hover{opacity:1}
   .nav-cta{
-    background:var(--blue);color:#fff;padding:9px 18px;border-radius:8px;
-    font-size:14px;font-weight:600;white-space:nowrap;
+    background:var(--blue-deep);color:#fff;padding:10px 20px;border-radius:8px;
+    font-size:14px;font-weight:700;white-space:nowrap;
   }
-  .nav-cta:hover{background:var(--blue-deep)}
+  .nav-cta:hover{background:#0B2242}
   @media(max-width:760px){.nav-links{display:none}}
 
   .hero{
-    background:linear-gradient(180deg,var(--gold-soft) 0%,#fff 100%);
-    padding:72px 0 64px;border-bottom:1px solid var(--line);
+    background:linear-gradient(165deg,#FFE070 0%,var(--yellow) 45%,#FFE98A 100%);
+    padding:78px 0 70px;position:relative;overflow:hidden;
   }
+  .hero::after{
+    content:"∞";position:absolute;right:-40px;top:-70px;
+    font-size:420px;line-height:1;color:rgba(27,74,138,.06);
+    font-weight:400;pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:1}
   .hero h1{
-    font-size:clamp(30px,5.2vw,46px);line-height:1.3;margin:0 0 18px;
-    letter-spacing:-.01em;font-weight:800;
+    font-size:clamp(30px,5.2vw,47px);line-height:1.3;margin:0 0 18px;
+    letter-spacing:-.01em;font-weight:800;color:var(--blue-deep);
   }
-  .hero h1 .accent{color:var(--blue)}
+  .hero h1 .accent{color:#B33A1A}
   .hero .tagline{
-    font-size:clamp(15px,2.2vw,18px);color:var(--muted);margin:0 0 30px;max-width:640px;
+    font-size:clamp(15px,2.2vw,18px);color:#4A3F22;margin:0 0 30px;max-width:640px;
   }
   .badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
   .badge{
-    background:#fff;border:1px solid var(--line);border-radius:999px;
-    padding:7px 15px;font-size:13.5px;font-weight:600;color:var(--blue);
+    background:rgba(255,255,255,.72);border:1px solid rgba(18,50,94,.14);
+    border-radius:999px;padding:7px 15px;font-size:13.5px;font-weight:700;color:var(--blue-deep);
   }
-  .badge.gold{background:var(--gold-soft);border-color:#F3DCA8;color:#8A5E00}
+  .badge.solid{background:var(--blue-deep);color:#fff;border-color:var(--blue-deep)}
   .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    padding:13px 26px;border-radius:9px;font-weight:700;font-size:15.5px;
+    padding:14px 28px;border-radius:9px;font-weight:700;font-size:15.5px;
     transition:transform .12s ease, background .12s ease;
   }
   .btn:active{transform:translateY(1px)}
-  .btn-primary{background:var(--blue);color:#fff}
-  .btn-primary:hover{background:var(--blue-deep)}
-  .btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
-  .btn-ghost:hover{border-color:#C9D0D8}
+  .btn-primary{background:var(--blue-deep);color:#fff;box-shadow:0 4px 14px rgba(18,50,94,.22)}
+  .btn-primary:hover{background:#0B2242}
+  .btn-ghost{background:#fff;color:var(--blue-deep);border:2px solid var(--blue-deep)}
+  .btn-ghost:hover{background:var(--yellow-soft)}
 
-  section{padding:72px 0}
+  section{padding:76px 0}
   .sec-head{margin-bottom:40px}
-  .sec-head h2{font-size:clamp(23px,3.4vw,31px);margin:0 0 10px;letter-spacing:-.01em;font-weight:800}
+  .sec-head h2{font-size:clamp(23px,3.4vw,31px);margin:0 0 10px;letter-spacing:-.01em;font-weight:800;color:var(--blue-deep)}
   .sec-head p{margin:0;color:var(--muted);font-size:16px}
   .eyebrow{
-    display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;
-    color:var(--gold);text-transform:uppercase;margin-bottom:10px;
+    display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.1em;
+    color:var(--yellow-deep);text-transform:uppercase;margin-bottom:10px;
   }
 
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   @media(max-width:760px){.grid{grid-template-columns:1fr}}
   .card{
-    background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 28px;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px 28px;
     transition:box-shadow .15s ease, transform .15s ease;
   }
-  .card:hover{box-shadow:0 8px 28px rgba(20,51,92,.08);transform:translateY(-2px)}
-  .card h3{margin:0 0 6px;font-size:20px;font-weight:800}
+  .card:hover{box-shadow:0 10px 30px rgba(18,50,94,.10);transform:translateY(-2px)}
+  .card h3{margin:0 0 6px;font-size:21px;font-weight:800;color:var(--blue-deep)}
   .card .sub{color:var(--muted);font-size:14px;margin:0 0 20px}
   .subjects{display:flex;flex-wrap:wrap;gap:9px}
   .subject{
-    background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;
-    padding:8px 14px;font-size:14.5px;font-weight:600;
+    background:var(--yellow-soft);border:1px solid var(--yellow-line);border-radius:8px;
+    padding:8px 15px;font-size:14.5px;font-weight:700;color:#5A4A18;
   }
-  .card.blue{border-top:4px solid var(--blue)}
-  .card.gold{border-top:4px solid var(--gold)}
+  .card.blue{border-top:5px solid var(--blue)}
+  .card.gold{border-top:5px solid var(--yellow-deep)}
 
-  .why{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .why{background:var(--yellow-soft);border-top:1px solid var(--yellow-line);border-bottom:1px solid var(--yellow-line)}
   .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
   @media(max-width:760px){.why-grid{grid-template-columns:1fr}}
-  .why-item h3{margin:0 0 8px;font-size:17px;font-weight:800}
-  .why-item p{margin:0;color:var(--muted);font-size:15px}
+  .why-item h3{margin:0 0 8px;font-size:17px;font-weight:800;color:var(--blue-deep)}
+  .why-item p{margin:0;color:#5F5539;font-size:15px}
   .why-num{
     display:inline-flex;align-items:center;justify-content:center;
-    width:34px;height:34px;border-radius:9px;background:var(--blue);color:#fff;
+    width:36px;height:36px;border-radius:10px;background:var(--yellow-deep);color:#fff;
     font-weight:800;font-size:15px;margin-bottom:14px;
   }
 
   .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
   @media(max-width:760px){.contact-grid{grid-template-columns:1fr;gap:28px}}
-  .info-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .info-row{display:flex;gap:14px;padding:17px 0;border-bottom:1px solid var(--line)}
   .info-row:last-child{border-bottom:none}
-  .info-label{flex:0 0 84px;color:var(--muted);font-size:14px;font-weight:600;padding-top:2px}
-  .info-value{font-size:16px;font-weight:600}
+  .info-label{flex:0 0 84px;color:var(--muted);font-size:14px;font-weight:700;padding-top:2px}
+  .info-value{font-size:16px;font-weight:700}
   .info-value a{color:var(--blue)}
   .info-value a:hover{text-decoration:underline}
   .map-card{
-    background:var(--bg-alt);border:1px solid var(--line);border-radius:14px;
-    padding:26px;font-size:14.5px;color:var(--muted);
+    background:var(--yellow);border:1px solid var(--yellow-deep);border-radius:14px;
+    padding:28px;font-size:14.5px;color:#4A3F22;
   }
-  .map-card strong{display:block;color:var(--ink);font-size:15.5px;margin-bottom:8px}
+  .map-card strong{display:block;color:var(--blue-deep);font-size:16px;margin-bottom:8px}
 
-  footer{
-    border-top:1px solid var(--line);padding:34px 0;font-size:13.5px;color:var(--muted);
-  }
+  footer{background:var(--blue-deep);color:#C9D6E8;padding:36px 0;font-size:13.5px}
   .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  .foot a:hover{color:var(--ink)}
+  .foot a{color:var(--yellow);font-weight:700}
+  .foot a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -168,8 +175,8 @@
         政府立案、安檢合格，讓孩子在安全的環境裡穩定進步。
       </p>
       <div class="badges">
-        <span class="badge gold">政府立案</span>
-        <span class="badge gold">安檢合格</span>
+        <span class="badge solid">政府立案</span>
+        <span class="badge solid">安檢合格</span>
         <span class="badge">北府教社字第1013076096</span>
         <span class="badge">林口仁愛路二段</span>
       </div>
@@ -269,7 +276,7 @@
           <strong>歡迎到班參觀</strong>
           我們位於林口仁愛路二段，鄰近湖南里。建議先來電確認時段，我們可以安排老師為您說明課程與分班方式。
           <div style="margin-top:18px">
-            <a class="btn btn-primary" style="padding:11px 20px;font-size:14.5px" href="tel:0226085425">打電話預約</a>
+            <a class="btn btn-primary" style="padding:12px 22px;font-size:14.5px" href="tel:0226085425">打電話預約</a>
           </div>
         </div>
       </div>
@@ -281,7 +288,7 @@
 <footer>
   <div class="wrap foot">
     <div>© 2026 仁僾文理語文短期補習班　·　北府教社字第 1013076096 號</div>
-    <div>網站由 <a href="https://cootai.tw" style="color:var(--blue);font-weight:600">CooTai 酷台</a> 建置</div>
+    <div>網站由 <a href="https://cootai.tw">CooTai 酷台</a> 建置</div>
   </div>
 </footer>
 
