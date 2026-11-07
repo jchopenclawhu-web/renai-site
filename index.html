@@ -142,6 +142,27 @@
   }
   .map-card strong{display:block;color:var(--blue-deep);font-size:16px;margin-bottom:8px}
 
+  /* LINE add-friend band */
+  .line-band{background:var(--blue-deep);color:#fff;padding:66px 0}
+  .line-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:44px;align-items:center}
+  @media(max-width:760px){.line-grid{grid-template-columns:1fr;gap:30px;text-align:center}}
+  .line-band .eyebrow{color:var(--yellow)}
+  .line-band h2{font-size:clamp(22px,3.2vw,30px);margin:0 0 12px;font-weight:800;color:#fff}
+  .line-band p{margin:0 0 26px;color:#C9D6E8;font-size:15.5px;max-width:540px}
+  @media(max-width:760px){.line-band p{margin-left:auto;margin-right:auto}}
+  .line-btn{
+    display:inline-flex;align-items:center;gap:10px;background:var(--yellow);
+    color:var(--blue-deep);padding:15px 30px;border-radius:10px;
+    font-weight:800;font-size:16px;box-shadow:0 4px 16px rgba(0,0,0,.18);
+  }
+  .line-btn:hover{background:#FFE070}
+  .qr-card{
+    background:#fff;border-radius:16px;padding:16px;justify-self:center;
+    box-shadow:0 8px 26px rgba(0,0,0,.22);
+  }
+  .qr-card img{display:block;width:200px;height:200px;border-radius:6px}
+  .qr-cap{font-size:12.5px;color:var(--muted);text-align:center;margin-top:10px;font-weight:700}
+
   footer{background:var(--blue-deep);color:#C9D6E8;padding:36px 0;font-size:13.5px}
   .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .foot a{color:var(--yellow);font-weight:700}
@@ -159,6 +180,7 @@
     <nav class="nav-links">
       <a href="#courses">課程</a>
       <a href="#why">關於我們</a>
+      <a href="#line">加 LINE</a>
       <a href="#contact">聯絡</a>
     </nav>
     <a class="nav-cta" href="tel:0226085425">來電洽詢</a>
@@ -242,6 +264,27 @@
           <h3>在地經營，看得到成果</h3>
           <p>深耕林口，學生從國小一路念到國中。孩子的進步，是我們唯一在意的事。</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="line-band" id="line">
+    <div class="wrap line-grid">
+      <div>
+        <span class="eyebrow">LINE 官方帳號</span>
+        <h2>加 LINE，直接問課程</h2>
+        <p>
+          想問班上人數、上課時間，或幫孩子安排試聽，加我們的 LINE 都可以。
+          留言隨時收得到，老師看到會親自回您。
+        </p>
+        <a class="line-btn" href="https://line.me/R/ti/p/@829kbsjm" target="_blank" rel="noopener">
+          加入 LINE 好友　@829kbsjm
+        </a>
+      </div>
+      <div class="qr-card">
+        <img src="line-qr.png" alt="仁僾文理語文短期補習班 LINE 官方帳號 QR Code"
+             width="200" height="200">
+        <div class="qr-cap">用手機掃描加入</div>
       </div>
     </div>
   </section>
